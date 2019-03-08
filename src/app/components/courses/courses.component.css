@@ -1,0 +1,30 @@
+.card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.card-img {
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.card-left {
+    margin-right: 20px;
+}
+
+.card-right {
+    margin-left: 20px;
+}
+
+h3 {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+hr {
+    padding: 0;
+    margin: 0;
+}
