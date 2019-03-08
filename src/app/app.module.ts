@@ -13,6 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 
 //Services
 import { AgteamServiceService } from './services/agteam-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -29,7 +30,8 @@ import { AgteamServiceService } from './services/agteam-service.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     AgteamServiceService
