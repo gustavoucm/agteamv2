@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AgteamServiceService {
+export class AgteamService {
   agteam_url = 'https://agteam-53ecb.firebaseio.com/courses';
 
   constructor(private http: HttpClient) {

@@ -1,14 +1,16 @@
 <div class="container-fluid animated fadeIn">
     <h3>Nuestros cursos</h3>
     <div class="row mb-md-5 justify-content-center">
-        <div class="card col-4 card-left mb-md-5" *ngFor="let course of courses ">
+        <div class="card col-4 card-left mb-md-5" *ngFor="let course of courses; let i = index">
             <div class="card-img">
                 <img src="/assets/img/courses/fund-bdd.png" alt="bjb" class="card-img-top">
             </div>
             <hr>
             <div class="card-body">
+                {{i}}
                 <h5 class="card-title">{{course['name']}} <span *ngIf="course['status']== false" class="badge badge-warning">Próximamente</span></h5>
                 <p class="card-text">{{course['short_desc']}}</p>
+                <button class="btn btn-primary" [routerLink]="['/course', i+1]">Ver curso</button>
             </div>
         </div>
     </div>

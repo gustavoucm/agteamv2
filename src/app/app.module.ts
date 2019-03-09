@@ -12,13 +12,10 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { AboutComponent } from './components/about/about.component';
 
 //Services
-import { AgteamServiceService } from './services/agteam-service.service';
+import { AgteamService } from './services/agteam.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CourseComponent } from './components/course/course.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -39,7 +36,7 @@ import { CourseComponent } from './components/course/course.component';
     HttpClientModule
   ],
   providers: [
-    AgteamServiceService
+    AgteamService
   ],
   bootstrap: [AppComponent]
 })

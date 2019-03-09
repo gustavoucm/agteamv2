@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AgteamServiceService } from 'src/app/services/agteam-service.service';
+import { AgteamService } from 'src/app/services/agteam.service';
 import { Course } from 'src/app/interfaces/course.interface';
 
 @Component({
@@ -9,7 +9,7 @@ import { Course } from 'src/app/interfaces/course.interface';
 })
 export class CoursesComponent implements OnInit {
   courses: Object[] = [];
-  constructor(private agteamService: AgteamServiceService) {
+  constructor(private agteamService: AgteamService) {
     this.agteamService.getCourses().subscribe( (data: any) => {
       this.courses = data;
       console.log(this.courses);
