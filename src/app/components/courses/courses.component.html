@@ -1,47 +1,14 @@
 <div class="container-fluid animated fadeIn">
     <h3>Nuestros cursos</h3>
     <div class="row mb-md-5 justify-content-center">
-        <div class="card col-4 card-left">
+        <div class="card col-4 card-left mb-md-5" *ngFor="let course of courses ">
             <div class="card-img">
                 <img src="/assets/img/courses/fund-bdd.png" alt="bjb" class="card-img-top">
             </div>
             <hr>
             <div class="card-body">
-                <h5 class="card-title">Fundamentos de bases de datos</h5>
-                <p class="card-text">Crea tus propios modelos de bases de datos con las mejores prácticas del curso.</p>
-            </div>
-        </div>
-        <div class="card col-4 card-right">
-            <div class="card-img">
-                <img src="/assets/img/courses/mysql.png" alt="mysql" class="card-img-top">
-            </div>
-            <hr>
-            <div class="card-body">
-                <h5 class="card-title">MySQL</h5>
-                <p class="card-text"> Aprende las funciones de MySQL como gestor de base de datos con el que podrás crear aplicaciones para ejecutar dichas funciones.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="row mb-md-5 justify-content-center">
-        <div class="card col-4 card-left">
-            <div class="card-img">
-                <img src="assets/img/courses/psql.png" alt="postgree" class="card-img-top">
-            </div>
-            <hr>
-            <div class="card-body">
-                <h5 class="card-title">PostgreSQL</h5>
-                <p class="card-text">Diseña, crea y administra bases de datos con PostreSQL, el más poderoso motor OpenSource</p>
-            </div>
-        </div>
-        <div class="card col-4 card-right">
-            <div class="card-img">
-                <img src="assets/img/courses/mongo.jpg" alt="postgree" class="card-img-top">
-            </div>
-            <hr>
-            <div class="card-body">
-                <h5 class="card-title">Mongo DB</h5>
-                <p class="card-text">Con este curso aprenderas que es NoSQL y como implementarlo a través de MongoDB</p>
+                <h5 class="card-title">{{course['name']}} <span *ngIf="course['status']== false" class="badge badge-warning">Próximamente</span></h5>
+                <p class="card-text">{{course['short_desc']}}</p>
             </div>
         </div>
     </div>

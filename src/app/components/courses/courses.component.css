@@ -18,6 +18,11 @@
     margin-left: 20px;
 }
 
+.card-title,
+.card-text {
+    text-align: center;
+}
+
 h3 {
     margin: 40px 0;
     text-align: center;

@@ -14,6 +14,9 @@ import { AboutComponent } from './components/about/about.component';
 //Services
 import { AgteamServiceService } from './services/agteam-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CourseComponent } from './components/course/course.component';
+
 
 
 
@@ -26,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     SigninComponent,
     CreateAccountComponent,
     CoursesComponent,
-    AboutComponent
+    AboutComponent,
+    ProfileComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
