@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-create-account',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(private af: AngularFireAuth) {}
 
   ngOnInit() {
   }
 
+  createAccount(email: string, password: string) {
+    console.log(email, password);
+    this.af.auth.createUserWithEmailAndPassword(email, password).catch( (e) => {
+      console.log('Error', e);
+    });
+  }
 }

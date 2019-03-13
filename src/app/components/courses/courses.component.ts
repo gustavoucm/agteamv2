@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AgteamServiceService } from 'src/app/services/agteam-service.service';
+import { AgteamService } from 'src/app/services/agteam.service';
+import { Course } from 'src/app/interfaces/course.interface';
 
 @Component({
   selector: 'app-courses',
@@ -7,10 +8,12 @@ import { AgteamServiceService } from 'src/app/services/agteam-service.service';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
-
-  constructor(private agteamService: AgteamServiceService) {
+  courses: Object[] = [];
+  constructor(private agteamService: AgteamService) {
     this.agteamService.getCourses().subscribe( (data: any) => {
-      console.log(data);
+      this.courses = data;
+      console.log(this.courses);
+      this.courses.shift();
     });
   }
 

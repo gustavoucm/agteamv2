@@ -12,9 +12,16 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { AboutComponent } from './components/about/about.component';
 
 //Services
-import { AgteamServiceService } from './services/agteam-service.service';
+import { AgteamService } from './services/agteam.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CourseComponent } from './components/course/course.component';
 
-
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +32,21 @@ import { AgteamServiceService } from './services/agteam-service.service';
     SigninComponent,
     CreateAccountComponent,
     CoursesComponent,
-    AboutComponent
+    AboutComponent,
+    ProfileComponent,
+    CourseComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [
-    AgteamServiceService
+    AgteamService
   ],
   bootstrap: [AppComponent]
 })
