@@ -14,4 +14,9 @@ export class AgteamService {
   getCourses(){
     return this.http.get(this.agteam_url + '.json');
   }
+
+  getCourse(id: string){
+    console.log(this.agteam_url +`/${id}.json`);
+    return this.http.get(this.agteam_url +`/${id}.json`);
+  }
 }

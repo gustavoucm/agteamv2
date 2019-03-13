@@ -1,11 +1,16 @@
-<div class="container-fluid">
+<div class="load-frame row" *ngIf="!load">
+    <div class="spinner-grow text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div class="container-fluid" *ngIf="load">
     <div class="row banner">
-        <h4 class="course-title">Nombre del curso</h4>
-        <p class="course-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio perferendis ullam veritatis placeat aut amet odio perspiciatis, veniam aperiam eos ratione nihil pariatur beatae ipsam dolorum soluta facere dolores? Numquam.</p>
+        <h4 class="course-title">{{course['name']}}</h4>
+        <p class="course-description ">{{course['description']}}</p>
         <button class="btn btn-warning ">Inscribirse</button>
     </div>
-    <h2>Contenido</h2>
     <div class="accordion offset-1 col-10" id="accordionExample">
+        <h2>Contenido</h2>
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">

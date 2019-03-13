@@ -17,6 +17,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CourseComponent } from './components/course/course.component';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { LoadingComponent } from './components/loading/loading.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,12 +34,16 @@ import { CourseComponent } from './components/course/course.component';
     CoursesComponent,
     AboutComponent,
     ProfileComponent,
-    CourseComponent
+    CourseComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [
     AgteamService

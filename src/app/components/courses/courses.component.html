@@ -7,7 +7,6 @@
             </div>
             <hr>
             <div class="card-body">
-                {{i}}
                 <h5 class="card-title">{{course['name']}} <span *ngIf="course['status']== false" class="badge badge-warning">Próximamente</span></h5>
                 <p class="card-text">{{course['short_desc']}}</p>
                 <button class="btn btn-primary" [routerLink]="['/course', i+1]">Ver curso</button>

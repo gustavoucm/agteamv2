@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AgteamService } from 'src/app/services/agteam.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-course',
@@ -7,10 +9,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
-
-  constructor(private activatedroute: ActivatedRoute) {
+  private id: string;
+  course = [];
+  load = false;
+  constructor(private activatedroute: ActivatedRoute, private agteamService: AgteamService,private router: Router) {
     this.activatedroute.params.subscribe(data =>{
-      console.log(data['id']);
+      this.id = data['id'];
+      this.agteamService.getCourse(this.id).subscribe((data: any) => {
+        console.log(data);
+        if (data == null) {
+          this.router.navigate(['/home']);
+        }
+        this.course = data;  
+          this.load = true;            
+      });
     });
   }
 
