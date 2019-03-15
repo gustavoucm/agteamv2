@@ -19,11 +19,15 @@ import { CourseComponent } from './components/course/course.component';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { LoadingComponent } from './components/loading/loading.component';
+
+import { TopicsPipe } from './pipes/topics.pipe';
+
 import { QuestionsComponent } from './components/questions/questions.component';
 import { ConditionsComponent } from './components/conditions/conditions.component';
+
 
 @NgModule({
   declarations: [
@@ -38,8 +42,12 @@ import { ConditionsComponent } from './components/conditions/conditions.componen
     ProfileComponent,
     CourseComponent,
     LoadingComponent,
+
+    TopicsPipe
+
     QuestionsComponent,
     ConditionsComponent
+
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,8 @@ import { Router } from '@angular/router'
 export class CourseComponent implements OnInit {
   private id: string;
   course = [];
-  load = false;
+  units = [];
+  loading = true;
   constructor(private activatedroute: ActivatedRoute, private agteamService: AgteamService,private router: Router) {
     this.activatedroute.params.subscribe(data =>{
       this.id = data['id'];
@@ -20,8 +21,10 @@ export class CourseComponent implements OnInit {
         if (data == null) {
           this.router.navigate(['/home']);
         }
-        this.course = data;  
-          this.load = true;            
+        this.course = data;
+        this.units = data[4];
+        this.units.shift();
+        this.loading = false;
       });
     });
   }
