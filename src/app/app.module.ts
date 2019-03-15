@@ -19,9 +19,10 @@ import { CourseComponent } from './components/course/course.component';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { LoadingComponent } from './components/loading/loading.component';
+import { TopicsPipe } from './pipes/topics.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     AboutComponent,
     ProfileComponent,
     CourseComponent,
-    LoadingComponent
+    LoadingComponent,
+    TopicsPipe
   ],
   imports: [
     BrowserModule,

@@ -9,11 +9,12 @@ import { Course } from 'src/app/interfaces/course.interface';
 })
 export class CoursesComponent implements OnInit {
   courses: Object[] = [];
+  loading = true;
   constructor(private agteamService: AgteamService) {
     this.agteamService.getCourses().subscribe( (data: any) => {
       this.courses = data;
       console.log(this.courses);
-      this.courses.shift();
+      this.loading = false;
     });
   }
 

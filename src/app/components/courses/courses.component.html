@@ -1,9 +1,10 @@
 <div class="container-fluid animated fadeIn">
+    <app-loading *ngIf="loading"></app-loading>
     <h3>Nuestros cursos</h3>
     <div class="row mb-md-5 justify-content-center">
-        <div class="card col-4 card-left mb-md-5" *ngFor="let course of courses; let i = index">
+        <div class="card col-10 col-md-4 card-left mb-5" *ngFor="let course of courses; let i = index">
             <div class="card-img">
-                <img src="/assets/img/courses/fund-bdd.png" alt="bjb" class="card-img-top">
+                <img attr.src="{{course['url-img']}}" alt="bjb" class="card-img-top">
             </div>
             <hr>
             <div class="card-body">
