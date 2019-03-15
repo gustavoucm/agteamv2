@@ -22,6 +22,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { LoadingComponent } from './components/loading/loading.component';
+import { QuestionsComponent } from './components/questions/questions.component';
+import { ConditionsComponent } from './components/conditions/conditions.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { LoadingComponent } from './components/loading/loading.component';
     AboutComponent,
     ProfileComponent,
     CourseComponent,
-    LoadingComponent
+    LoadingComponent,
+    QuestionsComponent,
+    ConditionsComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import { AboutComponent } from './components/about/about.component';
 import { CreateAccountComponent } from './components/create-account/create-account.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CourseComponent } from './components/course/course.component';
+import { QuestionsComponent } from './components/questions/questions.component';
+import { ConditionsComponent } from './components/conditions/conditions.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'createAccount', component: CreateAccountComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'questions', component: QuestionsComponent},
+  {path: 'conditions', component: ConditionsComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
