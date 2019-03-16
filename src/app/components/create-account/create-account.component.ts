@@ -25,13 +25,18 @@ export class CreateAccountComponent implements OnInit {
         console.log('Cuenta existente');
       }
     }).then(() => {
+      this.af.auth.currentUser.sendEmailVerification().then().catch(error => {
+        console.log(error);
+      });
       this.af.auth.onAuthStateChanged(user => {
           let us: User = {
           name,
           lastname,
-          id: user["uid"]
+          id: user["uid"],
+          description: '',
+          email
         };
-      this.service.setUser(us);
+          this.service.setUser(us);
       });
     });
 

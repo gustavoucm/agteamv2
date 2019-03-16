@@ -15,15 +15,19 @@ export class AgteamService {
 
   }
 
-  getCourses(){
+  getCourses() {
     return this.db.list('courses').valueChanges();
   }
 
-  getCourse(id: string){
+  getCourse(id: string) {
     return this.db.list(`courses/${id}`).valueChanges();
   }
 
-  setUser(user: User){
+  setUser(user: User) {
     this.db.database.ref(`users/${user.id}`).set(user);
+  }
+
+  getUser(uidUser: string) {
+    return this.db.list(`users/${uidUser}`).valueChanges();
   }
 }

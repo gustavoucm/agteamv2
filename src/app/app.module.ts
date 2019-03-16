@@ -27,6 +27,7 @@ import { TopicsPipe } from './pipes/topics.pipe';
 
 import { QuestionsComponent } from './components/questions/questions.component';
 import { ConditionsComponent } from './components/conditions/conditions.component';
+import { DatabaseFundamentalsComponent } from './components/database-fundamentals/database-fundamentals.component';
 
 
 @NgModule({
@@ -43,10 +44,11 @@ import { ConditionsComponent } from './components/conditions/conditions.componen
     CourseComponent,
     LoadingComponent,
 
-    TopicsPipe
+    TopicsPipe,
 
     QuestionsComponent,
-    ConditionsComponent
+    ConditionsComponent,
+    DatabaseFundamentalsComponent
 
   ],
   imports: [

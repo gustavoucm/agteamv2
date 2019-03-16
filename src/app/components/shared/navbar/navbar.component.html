@@ -2,7 +2,7 @@
     <div class="navbar-brand">
         <i class="fab fa-adversal"></i>
     </div>
-    <a class="navbar-brand" href="#">AGTeam</a>
+    <a class="navbar-brand" [routerLink]="['/home']">AGTeam</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,7 +21,7 @@
                 <a class="nav-link text-white" [routerLink]="['/about']">Acerca de</a>
                 <hr>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" *ngIf="!session">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Ingresar                  
                 </a>
@@ -31,6 +31,17 @@
                     <a class="dropdown-item" [routerLink]="['/createAccount']">Registrarse</a>
                 </div>
             </li>
+            <li class="nav-item dropdown" *ngIf="session">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{user[4]}}                 
+                    </a>
+                <hr>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/profile']">Mi Perfil</a>
+                    <a class="dropdown-item" (click)="signout()">Cerrar sesión</a>
+                </div>
+            </li>
+
         </ul>
     </div>
 </nav>
